@@ -29,6 +29,7 @@ namespace PerformanceBiller
             plays.Add((play.Name, audience, amount, credits));
         }
 
+
         public IReadOnlyCollection<(string name, int audience, int amount, int credits)> Plays => plays.AsReadOnly();
     }
 

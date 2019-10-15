@@ -16,19 +16,17 @@ namespace PerformanceBiller
         }
     }
 
-    public class BonusCreditCalculator : ICreditCalculator
+    public class BonusToEachFivePeopleCreditCalculator : ICreditCalculator
     {
         private readonly ICreditCalculator previousCalculator;
 
-        public BonusCreditCalculator(ICreditCalculator previousCalculator)
+        public BonusToEachFivePeopleCreditCalculator(ICreditCalculator previousCalculator)
         {
             this.previousCalculator = previousCalculator;
         }
 
-        public int CalculateCredits(int audience)
-        {
-            return previousCalculator.CalculateCredits(audience) + (audience / 5);
-        }
+        public int CalculateCredits(int audience) 
+            => previousCalculator.CalculateCredits(audience) + (audience / 5);
     }
 
 
