@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace PerformanceBiller
 {
@@ -29,13 +26,11 @@ namespace PerformanceBiller
             plays.Add((play.Name, audience, amount, credits));
         }
 
-
         public IReadOnlyCollection<(string name, int audience, int amount, int credits)> Plays => plays.AsReadOnly();
     }
 
     public class Statement
     {
-
         public string Run(JObject invoiceObject, JObject playObject)
         {
             var invoice = GetInvoice(invoiceObject);
